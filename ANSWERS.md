@@ -679,4 +679,17 @@ Joking aside though, if you're a job applicant skimming these answers so that yo
       // 1e12 to account for floating-point weirdness.
       return total/factor;
     }
+    
+    // Need a challenge?
+    // The same add function only somewhat exotic, can you figure it out
+    // Discussed in this post: https://coderwall.com/p/kgzygw
+    function add_exotic() {
+      var args = [].slice.call(arguments), total = 0;
+
+      for (;args.length; args.shift()) {
+         !args[0] || typeof args[0] === 'boolean' || (total += parseFloat( !(args[0]*1) ? 0 : args[0] ) * 1e12); 
+      }
+      
+      return total/1e12;
+    }
     ```
